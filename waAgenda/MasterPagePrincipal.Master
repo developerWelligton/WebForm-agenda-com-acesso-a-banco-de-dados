@@ -6,7 +6,7 @@
 <head runat="server">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <title></title>
-    <asp:ContentPlaceHolder ID="head" runat="server">
+    <asp:ContentPlaceHolder ID="head" runat="server"> 
     </asp:ContentPlaceHolder>
 </head>
 <body>
@@ -24,7 +24,8 @@
 
                 <DynamicSelectedStyle BackColor="#507CD1"></DynamicSelectedStyle>
                 <Items>
-                    <asp:MenuItem Text="Usuario" Value="Usuario"></asp:MenuItem>
+                    <asp:MenuItem Text="Home" Value="Home" NavigateUrl="~/index.aspx"></asp:MenuItem>
+                    <asp:MenuItem Text="Usuario" Value="Usuario" NavigateUrl="~/usuarios.aspx"></asp:MenuItem>
                     <asp:MenuItem Text="Contato" Value="Contato"></asp:MenuItem>
                     <asp:MenuItem Text="Sair" Value="Sair"></asp:MenuItem>
                 </Items>
