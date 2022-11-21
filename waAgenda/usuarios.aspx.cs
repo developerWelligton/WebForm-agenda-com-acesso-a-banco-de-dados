@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using System.Data.SqlClient;
 
 namespace waAgenda
 {
@@ -11,7 +12,29 @@ namespace waAgenda
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+             
         }
-    }
+ 
+  
+
+       
+
+        protected void SqlDataSourceUsuarios_Inserted(object sender, SqlDataSourceStatusEventArgs e)
+        {
+            if(e.Exception != null)
+            {
+                lMsg.Text = "Inserindo um registro duplicado ou campos em branco";
+                e.ExceptionHandled = true;
+            }
+        }
+
+        protected void SqlDataSourceUsuarios_Updated(object sender, SqlDataSourceStatusEventArgs e)
+        {
+            if (e.Exception != null)
+            {
+                lMsg.Text = "Alterando um registro sem informar todos os campos";
+                e.ExceptionHandled = true;
+            }
+        }
+    } 
 }

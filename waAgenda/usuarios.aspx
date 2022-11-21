@@ -108,11 +108,11 @@
             </tr>
         </SelectedItemTemplate>
     </asp:ListView>
-    <asp:SqlDataSource runat="server" ID="SqlDataSourceUsuarios" ConnectionString='<%$ ConnectionStrings:ConnectionString %>' 
-        DeleteCommand="DELETE FROM [usuario] WHERE [email] = @email" 
-        InsertCommand="INSERT INTO [usuario] ([email], [nome], [senha]) VALUES (@email, @nome, @senha)" 
-        SelectCommand="SELECT [email], [nome], [senha] FROM [usuario]" 
-        UpdateCommand="UPDATE [usuario] SET [nome] = @nome, [senha] = @senha WHERE [email] = @email">
+    <asp:SqlDataSource runat="server" ID="SqlDataSourceUsuarios" ConnectionString='<%$ ConnectionStrings:ConnectionString %>'
+        DeleteCommand="DELETE FROM [usuario] WHERE [email] = @email"
+        InsertCommand="INSERT INTO [usuario] ([email], [nome], [senha]) VALUES (@email, @nome, @senha)"
+        SelectCommand="SELECT [email], [nome], [senha] FROM [usuario]"
+        UpdateCommand="UPDATE [usuario] SET [nome] = @nome, [senha] = @senha WHERE [email] = @email"     OnInserted="SqlDataSourceUsuarios_Inserted" OnUpdated="SqlDataSourceUsuarios_Updated">
         <DeleteParameters>
             <asp:Parameter Name="email" Type="String"></asp:Parameter>
         </DeleteParameters>
@@ -127,5 +127,5 @@
             <asp:Parameter Name="email" Type="String"></asp:Parameter>
         </UpdateParameters>
     </asp:SqlDataSource>
-
+    <asp:Label ID="lMsg" runat="server"></asp:Label>
 </asp:Content>
