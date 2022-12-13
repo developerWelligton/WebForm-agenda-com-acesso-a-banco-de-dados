@@ -23,7 +23,8 @@ namespace waAgenda
         {
             if(e.Exception != null)
             {
-                lMsg.Text = "Inserindo um registro duplicado ou campos em branco";
+                Response.Write("<script>alert('Inserindo um registro duplicado ou campos em branco') </script>");
+                //lMsg.Text = "Inserindo um registro duplicado ou campos em branco";
                 e.ExceptionHandled = true;
             }
         }
@@ -31,8 +32,8 @@ namespace waAgenda
         protected void SqlDataSourceUsuarios_Updated(object sender, SqlDataSourceStatusEventArgs e)
         {
             if (e.Exception != null)
-            {
-                lMsg.Text = "Alterando um registro sem informar todos os campos";
+                Response.Write("<script>alert('Alterando um registro sem informar todos os campos') </script>");
+                //lMsg.Text = "Alterando um registro sem informar todos os campos";
                 e.ExceptionHandled = true;
             }
         }
