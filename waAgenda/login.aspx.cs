@@ -47,7 +47,8 @@ namespace waAgenda
             }
             else
             {
-                lbMsg.Text = "Email ou Senha incorretas!";
+                Response.Write("<script>alert('Email ou Senha incorretas') </script>");
+               // lbMsg.Text = "Email ou Senha incorretas!";
             }
             
         }
